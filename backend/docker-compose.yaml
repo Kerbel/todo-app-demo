@@ -37,6 +37,12 @@ services:
                 condition: service_healthy
         ports:
             - 8000:8000
+        environment:
+            - AUTOWRAPT_BOOTSTRAP=helios
+            - HS_TOKEN=23316b7dc8cd757a4404
+            - HS_SERVICE_NAME=backend
+            - HS_ENVIRONMENT=local_aviv
+            - HS_DEBUG=True
     distribution_manager:
         build: distribution_manager
         depends_on:
@@ -44,3 +50,9 @@ services:
                 condition: service_healthy
         ports:
             - 8888:8888
+        environment:
+            - AUTOWRAPT_BOOTSTRAP=helios
+            - HS_TOKEN=23316b7dc8cd757a4404
+            - HS_SERVICE_NAME=distribution_manager
+            - HS_ENVIRONMENT=local_aviv
+            - HS_DEBUG=True
