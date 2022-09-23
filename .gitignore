@@ -116,3 +116,7 @@ dmypy.json
 .idea/webResources.xml
 .idea/misc.xml
 .idea/fastapi-react.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/modules.xml
+.idea/vcs.xml
+frontend/package-lock.json
