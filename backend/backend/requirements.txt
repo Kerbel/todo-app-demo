@@ -2,4 +2,3 @@ fastapi==0.63.0
 uvicorn==0.13.4
 kafka-python==2.0.2
 pymongo==3.11.4
-helios-opentelemetry-sdk==1.0.24
