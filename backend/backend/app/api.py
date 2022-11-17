@@ -48,6 +48,7 @@ async def read_root() -> dict:
 
 @app.get("/todo", tags=["todos"])
 async def get_todos() -> dict:
+    print("hello world")
     return {"data": [
         {'id': str(i['_id']), 'item': i['item']
          } for i in todo_collection.find()]}
@@ -56,6 +57,8 @@ async def get_todos() -> dict:
 @app.post("/todo", tags=["todos"])
 async def add_todo(todo: dict) -> dict:
     r = todo_collection.insert_one(todo)
+    print("hello world")
+
     producer.send('todo_updates', value={'action': 'add'})
 
     # logging.error("Yay! Error log message!")
@@ -69,6 +72,7 @@ async def add_todo(todo: dict) -> dict:
 
 @app.put("/todo/{id}", tags=["todos"])
 async def update_todo(id: str, body: dict) -> dict:
+    print("hello world")
     result = todo_collection.find_one_and_update(
         {"_id": ObjectId(id)},
         {"$set": {"item": body['item']}})
